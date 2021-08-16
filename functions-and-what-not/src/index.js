@@ -18,17 +18,20 @@ function getOccurrences(array, value) {
   return array.filter((v) => (v === value)).length;
 }
 
+console.log(getOccurrences(arr, 0)); //2
 console.log(getOccurrences(arr, 1));  // 6
 console.log(getOccurrences(arr, 2));  //4
 console.log(getOccurrences(arr, 3));  //2
 console.log(getOccurrences(arr, 4));  //5
 console.log(getOccurrences(arr, 123)); //1
 
-//filter and .length
+
+// //filter and .length
 function getOccur(array, value) {
   return array.filter((v) => (v === value)).length;
 }
 console.log(getOccur(arr, 1));//6
+
 
 // using .reduce
 var a = [0,2,3,4,4,2,1,1,3,2,123,7,1,2,4,1,1,4,4,1,0];
@@ -38,6 +41,14 @@ var map = a.reduce(function(obj, b) {
   return obj;
 }, {});
 console.log(map);
+
+
+//Simple forEach loop
+const counts = {};
+const sampleArray = [0,2,3,4,4,2,1,1,3,2,123,7,1,2,4,1,1,4,4,1,0];
+sampleArray.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
+console.log(counts)
+//
 
 // If you want to start measuring performance in your app, pass a functionvcb
 // to log results (for example: reportWebVitals(console.log))
